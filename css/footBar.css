@@ -1,0 +1,43 @@
+.footerBar {
+	width: 7.5rem;
+	height: .98rem;
+	margin: 0 auto;
+	position: fixed;
+	z-index: 1111;
+	background-color: #fff;
+	box-sizing: border-box;
+	bottom: 0
+}
+
+.footerBar ul {
+	display: -webkit-box;
+	display: flex;
+	display: -ms-flex;
+	display: -webkit-flex;
+	width: 7.5rem;
+	height: .98rem
+}
+
+.footerBar ul .footLi {
+	height: .98rem;
+	flex: 1;
+	-ms-flex: 1;
+	-webkit-flex: 1;
+	-webkit-box-flex: 1;
+	text-align: center;
+	font-size: .2rem
+}
+
+.footerBar ul .footLi img {
+    display: inline-block;
+    margin-top: 0.17rem;
+    
+}
+.footerBar ul .footLi img.footImg1{
+	width:0.47rem ;
+	height: 0.69rem;
+}
+.footerBar ul .footLi img.footImg2{
+	width:0.8rem ;
+	height: 0.69rem;
+}

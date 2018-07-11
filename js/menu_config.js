@@ -1,0 +1,154 @@
+var menu_list = [{
+	"id": "1",
+	"name": "基本信息",
+	"url": "user_basic_info"
+}, {
+	"id": "2",
+	"name": "余量查询",
+	"url": "surplus_query"
+}, {
+	"id": "3",
+	"name": "话费余额",
+	"url": "calls_cost_balance"
+}, {
+	"id": "4",
+	"name": "历史账单",
+	"url": "bill_history"
+}, {
+	"id": "5",
+	"name": "充值记录",
+	"url": "recharge_record"
+}, {
+	"id": "6",
+	"name": "资费专区",
+	"url": "charges_center"
+}, {
+	"id": "7",
+	"name": "已办业务",
+	"url": "have_done_business"
+}, {
+	"id": "8",
+	"name": "订单查询",
+	"url": "order_query"
+}, {
+	"id": "9",
+	"name": "发票查询",
+	"url": "invoice_query"
+}, {
+	"id": "10",
+	"name": "详单查询",
+	"url": "order_detail_query"
+}, {
+	"id": "11",
+	"name": "选号中心",
+	"url": "choose_number_center"
+}, {
+	"id": "12",
+	"name": "号卡激活",
+	"url": "card_activate"
+}, {
+	"id": "13",
+	"name": "修改密码",
+	"url": "password"
+}, {
+	"id": "14",
+	"name": "过户申请",
+	"url": "transfer_application"
+}, {
+	"id": "15",
+	"name": "销户",
+	"url": "account_cancellation"
+}, {
+	"id": "16",
+	"name": "停复机业务",
+	"url": "stopping_continuing_business"
+}, {
+	"id": "17",
+	"name": "套餐变更",
+	"url": "package_modify"
+}, {
+	"id": "18",
+	"name": "最新活动",
+	"url": "latest_active"
+}, {
+	"id": "19",
+	"name": "境外上网",
+	"url": "abroad_networking"
+}, {
+	"id": "20",
+	"name": "手机深圳通",
+	"url": "mobile_szt"
+}, {
+	"id": "21",
+	"name": "实名认证",
+	"url": "realname_register"
+}, {
+	"id": "22",
+	"name": "补换卡业务",
+	"url": "change_card_business"
+}, {
+	"id": "23",
+	"name": "话费充值",
+	"url": "calls_cost_recharge"
+}, {
+	"id": "24",
+	"name": "流量语音",
+	"url": "gprs_voice_recharge"
+}, {
+	"id": "25",
+	"name": "在线客服",
+	"url": "online_customer_service"
+}, {
+	"id": "26",
+	"name": "人工客服",
+	"url": "artificial_service"
+}, {
+	"id": "27",
+	"name": "银盛金服",
+	"url": "ysjf"
+}, {
+	"id": "28",
+	"name": "e票通",
+	"url": "ysept"
+}, {
+	"id": "29",
+	"name": "业务介绍",
+	"url": "business_introduction"
+}, {
+	"id": "30",
+	"name": "合作登记",
+	"url": "cooperation_register"
+}, {
+	"id": "31",
+	"name": "常见问题",
+	"url": "common_problem"
+}, {
+	"id": "32",
+	"name": "发票申请",
+	"url": "invoice_apply"
+}];
+var hot_list = [{
+	"id": "3",
+	"name": "话费余额",
+	"url": "calls_cost_balance"
+}, {
+	"id": "11",
+	"name": "选号中心",
+	"url": "choose_number_center"
+}, {
+	"id": "12",
+	"name": "号卡激活",
+	"url": "card_activate"
+}, {
+	"id": "17",
+	"name": "套餐变更",
+	"url": "package_modify"
+}, {
+	"id": "21",
+	"name": "实名认证",
+	"url": "realname_register"
+}, {
+	"id": "23",
+	"name": "话费充值",
+	"url": "calls_cost_recharge"
+}]

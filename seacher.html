@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/subHead.css"/>
+		<link rel="stylesheet" type="text/css" href="css/seacher.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footBar.css"/>
+		<script src="js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<title>搜索</title>
+	</head>
+	<body>
+	<div class="businessHead">
+	搜索 
+</div>
+
+
+	<div class="seacherC">
+	<div class="seacherHead">
+		<div class="seacherLeft">
+			<img class="seacherIcon" src="images/seacherIcon.png"/>
+			<input class="seacherText" type="" name="" id="" value="" />
+		</div>
+		<div class="seacherRight">
+			取消
+		</div>
+	</div>
+	<div class="seacherDiv1 active">
+		<div class="seacherTitle">
+		搜索历史
+		</div>
+		<div class="seacherReasult">
+			<ul class="seacherUl ">
+				
+			</ul>
+		</div>
+	</div>
+	<div class="seacherDiv3">
+		<div class="seacherTitle">
+		业务中心
+		</div>
+		<ul class="seacherUlitem">
+		</ul>
+	</div>
+	<div class="seacherDiv4">
+		<img class="noting" src="images/noting.png"/>
+		<p class="nothingP">不好意思，您搜索的“嘻嘻嘻”不存在，请重新输入有效查询信息。</p>
+	</div>
+	<div class="seachDiv2">
+		<div class="seacherTitle">
+		热门服务
+		</div>
+		<div class="seacherList">
+			<ul class="seacherUl">
+				<li class="seacherli active">订单记录</li>
+				<li class="seacherli active">实名补登</li>
+				<li class="seacherli active">实名验证</li>
+			</ul>
+		</div>
+	</div>
+	
+</div>
+<div class="footerBar">
+	
+	<ul>
+		<li class="footLi " data-id="1">
+			<img class="footImg1" src="images/bottom1-1.png"/>
+		</li>
+		<li class="footLi " data-id="2">
+			<img class="footImg2" src="images/bottom2.png"/>
+		</li>
+		<li class="footLi " data-id="3">
+			<img class="footImg1" src="images/bottom3-3.png"/>
+		
+		</li>
+	</ul>
+	
+</div>
+<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/menu_config.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+</script>
+<script type="text/javascript">
+	
+	var munuList = menu_list;
+	var record;
+	//隐藏搜索栏
+	function hideSearch(){
+		$(".seacherDiv3").removeClass("active");
+	}
+	//显示搜索栏
+	function showSearch(){
+		var content = $(".seacherText").val();
+		record = [];
+		for(var i = 0,len = munuList.length;i<len;i++){
+			if(munuList[i].name.match(content)){
+				record.push(munuList[i]);
+			}
+		}
+		var searchStr = '';
+		if(record.length==0){
+			$(".nothingP").html("不好意思，您搜索的“<span>"+content+"</span>”不存在，请重新输入有效查询信息。")
+			showNoting();
+		}else{
+			for(var j=0,j_len = record.length;j<j_len;j++){
+				console.log(j+"==="+j_len)
+				var active=(j==record.length-1)?'':'active';
+				console.log(active)
+				record[j].name=record[j].name.replace(content,'<span>'+content+'</span>')
+				searchStr = searchStr+'<a class="resurt-item" data-id="'+record[j].id+'" href="javascript:void(0)"><li class="seacherliItem '+active+'">'+record[j].name+'</li></a>'
+			}
+			$(".seacherUlitem").html(searchStr);
+			$(".seacherDiv3").addClass("active");
+		}
+		
+	}
+	//隐藏历史记录
+	function hideHistory(){
+		$(".seacherDiv1").removeClass("active");
+	}
+	//显示历史记录
+	function showHistory(){
+		if(!window.localStorage){
+			return ;
+		}
+		
+		$(".seacherDiv1").addClass("active");
+		var historyStr = localStorage.getItem("search");
+		var historyArr = JSON.parse(historyStr);
+		if(!historyArr){
+			return ;
+		}
+		var hStr = '';
+		
+		for(var j=0,j_len = historyArr.length;j<j_len;j++){
+			var active=(j%5==3)?'':'active';
+			hStr = hStr+'<a class="history-item" data-id="'+historyArr[j].id+'" href="'+historyArr[j].url+'" data-href="'+historyArr[j].url+'"><li class="seacherli '+active+'">'+historyArr[j].name+'</li></a>'
+		}
+		$(".seacherReasult .seacherUl").html(hStr);
+	}
+	//显示无信息
+	function showNoting(){
+		$(".seacherDiv4").addClass("active");
+	}
+	function hideNoting(){
+		$(".seacherDiv4").removeClass("active");
+	}
+	showHistory();
+	$(".seacherText").on("focus",function(){
+		var c_val = $(this).val().trim();
+		if(c_val == ''){//内容为空的时候，显示历史记录
+			showHistory();
+			hideSearch();
+		}
+		
+	});
+	$(".seacherIcon").on("click",function(){
+		hideHistory();
+		hideNoting();
+		showSearch();
+	});
+	var searchHistoryArr;
+	$(".seacherUlitem").on("click",".resurt-item",function(){
+		var itemName = $(this).find("li").text();
+		var id=$(this).data("id");
+		var url=$(this).data("url");
+		var historyStr = localStorage.getItem("search");
+		searchHistoryArr = JSON.parse(historyStr)||[];
+		var exist=false;
+		for(var i=0;i<searchHistoryArr.length;i++){
+			var obj=searchHistoryArr[i];
+			if(obj.name.indexOf(itemName)!=-1){
+				exist=true;
+				return;
+			}
+		}
+		if(!exist){
+			searchHistoryArr.push({
+				id:id,
+				name:itemName,
+				url:url
+			});
+		}
+		
+		if(searchHistoryArr.length == 0){
+			searchHistoryArr.push({
+				id:$(this).data("id"),
+				name:itemName,
+				url:$(this).data("url")
+			});
+		}
+		localStorage.setItem("search",JSON.stringify(searchHistoryArr));
+		hideSearch();
+		showHistory();
+		
+		
+	});
+	
+	
+	</script>
+
+
+</body>
+</html>

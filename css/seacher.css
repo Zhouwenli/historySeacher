@@ -1,0 +1,158 @@
+body,
+html {
+	background-color: #fff
+}
+
+.seacherC {
+	width: 7.5rem;
+	margin: 0 auto;
+	padding-top: .8rem
+}
+
+.seacherC .seacherHead {
+	width: 7.02rem;
+	height: .7rem;
+	margin: .3rem auto
+}
+
+.seacherC .seacherHead .seacherLeft {
+	width: 6.3rem;
+	height: .7rem;
+	line-height: .7rem;
+	background-color: #f0f0f0;
+	border-radius: .05rem;
+	float: left;
+	position: relative
+}
+
+.seacherC .seacherHead .seacherLeft .seacherIcon {
+	width: .36rem;
+	height: .36rem;
+	position: absolute;
+	top: 50%;
+	margin-top: -.18rem;
+	left: .3rem
+}
+
+.seacherC .seacherHead .seacherLeft .seacherText {
+	width: 5rem;
+	padding-left: 1rem;
+	font-size: .26rem;
+	border: none;
+	background-color: #f0f0f0;
+}
+
+.seacherC .seacherHead .seacherRight {
+	width: .72rem;
+	height: .7rem;
+	line-height: .7rem;
+	text-align: right;
+	float: left;
+	font-size: .26rem;
+	color: #3293ea
+}
+
+.seacherC .seacherTitle {
+	width: 7.5rem;
+	height: .7rem;
+	line-height: .7rem;
+	font-size: .26rem;
+	color: #3293ea;
+	background-color: #f0f0f0;
+	text-indent: .3rem
+}
+
+.seacherC .seacherList,
+.seacherC .seacherReasult {
+	width: 7.02rem;
+	min-height: 2rem;
+	margin: 0 auto
+}
+
+.seacherC .seacherList .seacherUl,
+.seacherC .seacherReasult .seacherUl {
+	width: 7.02rem;
+	margin: 0 auto;
+	overflow: hidden;
+	padding-bottom: .2rem
+}
+
+.seacherC .seacherList .seacherUl .seacherli,
+.seacherC .seacherReasult .seacherUl .seacherli {
+	width: 1.5rem;
+	height: .6rem;
+	line-height: .6rem;
+	border-radius: .05rem;
+	-webkit-border-radius: .05rem;
+	background-color: #f0f0f0;
+	color: #999;
+	font-size: .24rem;
+	margin-top: .2rem;
+	text-align: center;
+	float: left
+}
+
+.seacherC .seacherList .seacherUl .seacherli.active,
+.seacherC .seacherReasult .seacherUl .seacherli.active {
+	margin-right: .34rem
+}
+.seachDiv3{
+	width: 7.5rem;
+	margin: 0 auto;
+}
+.seachDiv3 .seacherUlitem{
+	width: 7.02rem;
+	margin: 0 auto;
+}
+.seacherUlitem a{
+	width: 7.02rem;
+	height: 0.7rem;
+}
+.seacherUlitem .seacherliItem{
+	width: 7.02rem;
+	margin: 0 auto;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	text-indent: 0.2rem;
+	font-size: 0.24rem;
+	color: #333;
+	
+}
+.seacherUlitem .seacherliItem span{
+	color: #ff4b4b;
+}
+.seacherUlitem .seacherliItem.active{
+	border-bottom: 1px solid #DFDFDD;
+}
+.seacherDiv1,.seacherDiv3{
+	display: none;
+}
+.seacherDiv1.active,.seacherDiv3.active{
+	display: block;
+}
+.seacherDiv4{
+	width: 7.5rem;
+	height: 3rem;
+	margin: 0 auto;
+	padding-top: 0.4rem;
+	display: none;
+}
+.seacherDiv4.active{
+	display: block;
+}
+.seacherDiv4 .noting{
+	width: 0.72rem;
+	height: 0.76rem;
+	margin: 0 auto;
+	display: block;
+}
+.seacherDiv4 .nothingP{
+	width: 4.25rem;
+	margin: 0 auto;
+	padding-top: 0.29rem;
+	color: #333;
+	font-size: 0.26rem;
+}
+.seacherDiv4 .nothingP span{
+	color: #ff4b4b;
+}
